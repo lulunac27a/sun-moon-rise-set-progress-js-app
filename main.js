@@ -15,7 +15,7 @@ input.question('Enter latitude: ', (latitudeInput) => {
         const tomorrow = new Date(dateNow.getFullYear(), dateNow.getMonth(), dateNow.getDate() + 1);
         const dates = [yesterday, today, tomorrow];
         const events = [];
-        let previousMoonEvent, nextMoonEvent;
+        let previousMoonEvent = null, nextMoonEvent = null;
         for (const dateEvent of dates) {
             const times = SunCalc.getMoonTimes(dateEvent, latitude, longitude);
             if (times.rise != null || times.rise !== undefined) {
@@ -34,13 +34,11 @@ input.question('Enter latitude: ', (latitudeInput) => {
         const previousDayTimes = SunCalc.getTimes(dateNow.setDate(dateNow.getDate() - 1), latitude, longitude);
         const nextDayTimes = SunCalc.getTimes(dateNow.setDate(dateNow.getDate() + 1), latitude, longitude);
         const moonTimes = SunCalc.getMoonTimes(dateNow, latitude, longitude);
-        const previousDaySunrise = previousDayTimes.sunrise;
         const sunrise = times.sunrise;
         const nextDaySunrise = nextDayTimes.sunrise;
         const previousDaySunset = previousDayTimes.sunset;
         const sunset = times.sunset;
-        const nextDaySunset = nextDayTimes.sunset;
-        let previousSunriseSet, nextSunriseSet;
+        let previousSunriseSet = null, nextSunriseSet = null;
         const moonrise = moonTimes.rise;
         const moonset = moonTimes.set;
         let isSunUp = false;

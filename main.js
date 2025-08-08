@@ -1,8 +1,8 @@
 import readline from 'readline';
 import SunCalc from 'suncalc';
 const input = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
+    input: process.stdin,
+    output: process.stdout
 });
 
 input.question('Enter latitude: ', (latitudeInput) => {
@@ -21,10 +21,10 @@ input.question('Enter latitude: ', (latitudeInput) => {
         for (const dateEvent of dates) {
             const times = SunCalc.getMoonTimes(dateEvent, latitude, longitude);
             if (times.rise != null || times.rise !== undefined) {
-                events.push({type: 'rise', date: times.rise});
+                events.push({ type: 'rise', date: times.rise });
             }
             if (times.set != null || times.set !== undefined) {
-                events.push({type: 'set', date: times.set});
+                events.push({ type: 'set', date: times.set });
             }
             events.sort((a, b) => a.date - b.date);
             const previous = [...events].reverse().find(e => e.date < dateNow);

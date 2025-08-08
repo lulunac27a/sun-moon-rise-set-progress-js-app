@@ -101,12 +101,12 @@ input.question("Enter latitude: ", (latitudeInput) => {
         } else if (previousMoonEvent.type === "set") {
             isMoonUp = false;
         }
-        console.log("Sunrise: " + sunrise + " Sunset: " + sunset);
-        console.log("Moonrise: " + moonrise + " Moonset: " + moonset);
-        console.log("Previous Sunrise/Sunset: " + previousSunriseSet);
-        console.log("Next Sunrise/Sunset: " + nextSunriseSet);
-        console.log("Previous Moonrise/Moonset: " + previousMoonEvent.date);
-        console.log("Next Moonrise/Moonset: " + nextMoonEvent.date);
+        console.log(`Sunrise: ${sunrise} Sunset: ${sunset}`);
+        console.log(`Moonrise: ${moonrise} Moonset: ${moonset}`);
+        console.log(`Previous Sunrise/Sunset: ${previousSunriseSet}`);
+        console.log(`Next Sunrise/Sunset: ${nextSunriseSet}`);
+        console.log(`Previous Moonrise/Moonset: ${previousMoonEvent.date}`);
+        console.log(`Next Moonrise/Moonset: ${nextMoonEvent.date}`);
         const sunProgress =
             (dateNow - previousSunriseSet) /
             (nextSunriseSet - previousSunriseSet);
@@ -114,16 +114,10 @@ input.question("Enter latitude: ", (latitudeInput) => {
             (dateNow - previousMoonEvent.date) /
             (nextMoonEvent.date - previousMoonEvent.date);
         console.log(
-            "Sun progress from " +
-                (isSunUp ? "sunrise to sunset: " : "sunset to sunrise: ") +
-                (sunProgress * 100).toFixed(2) +
-                "%",
+            `Sun progress from ${isSunUp ? "sunrise to sunset: " : "sunset to sunrise: "} ${(sunProgress * 100).toFixed(2)}%`,
         );
         console.log(
-            "Moon progress from " +
-                (isMoonUp ? "moonrise to moonset: " : "moonset to moonrise: ") +
-                (moonProgress * 100).toFixed(2) +
-                "%",
+            `Moon progress from ${isMoonUp ? "moonrise to moonset: " : "moonset to moonrise: "} ${(moonProgress * 100).toFixed(2)}%`,
         );
         input.close();
     });

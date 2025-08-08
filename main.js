@@ -22,7 +22,7 @@ input.question("Enter latitude: ", (latitudeInput) => {
         );
         const today = new Date(
             dateNow.getFullYear(),
-            dateNow.getMonth,
+            dateNow.getMonth(),
             dateNow.getDate(),
         );
         const tomorrow = new Date(

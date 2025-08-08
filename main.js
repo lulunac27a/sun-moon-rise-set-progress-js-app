@@ -4,7 +4,6 @@ const input = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
 });
-
 input.question("Enter latitude: ", (latitudeInput) => {
     const latitude = parseFloat(latitudeInput);
     input.question("Enter longitude: ", (longitudeInput) => {

@@ -10,10 +10,12 @@ input.question('Enter latitude: ', (latitudeInput) => {
     input.question('Enter longitude: ', (longitudeInput) => {
         const longitude = parseFloat(longitudeInput);
         const dateNow = new Date();
+        const dayBeforeYesterday = new Date(dateNow.getFullYear(), dateNow.getMonth(), dateNow.getDate() - 2);
         const yesterday = new Date(dateNow.getFullYear(), dateNow.getMonth(), dateNow.getDate() - 1);
         const today = new Date(dateNow.getFullYear(), dateNow.getMonth, dateNow.getDate());
         const tomorrow = new Date(dateNow.getFullYear(), dateNow.getMonth(), dateNow.getDate() + 1);
-        const dates = [yesterday, today, tomorrow];
+        const dayAfterTomorrow = new Date(dateNow.getFullYear(), dateNow.getMonth(), dateNow.getDate() + 2);
+        const dates = [dayBeforeYesterday, yesterday, today, tomorrow, dayAfterTomorrow];
         const events = [];
         let previousMoonEvent = null, nextMoonEvent = null;
         for (const dateEvent of dates) {

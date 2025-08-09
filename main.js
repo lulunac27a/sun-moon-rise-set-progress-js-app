@@ -61,8 +61,8 @@ input.question("Enter latitude: ", (latitudeInput) => {
                 .reverse()
                 .find((e) => e.date < dateNow); //get previous moon rise/set event from current date and time
             const next = events.find((e) => e.date > dateNow); //get next moon rise/set event from current date and time
-            previousMoonEvent = previous;
-            nextMoonEvent = next;
+            previousMoonEvent = previous; //set previous moon event
+            nextMoonEvent = next; //set next moon event
         }
         const times = SunCalc.getTimes(dateNow, latitude, longitude); //get sunrise/sunset times
         const previousDayTimes = SunCalc.getTimes(

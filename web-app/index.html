@@ -1,21 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <title>Sun and Moon Rise and Set Progress App</title>
-        <link rel="stylesheet" href="src/style.css">
+        <link rel="stylesheet" href="src/style.css" />
     </head>
     <body>
         <h1>Sun and Moon Rise and Set Progress App</h1>
-        <input type="number" id="latitude" placeholder="Enter Latitude">
-        <input type="number" id="longitude" placeholder="Enter Longitude">
-        <button id="calculate">Calculate Rise and Set Times and Progress</button>
-        Sunrise Time: <span id="sunrise"></span><br>
-        Sunset Time: <span id="sunset"></span><br>
-        Moonrise Time: <span id="moonrise"></span><br>
-        Moonset Time: <span id="moonset"></span><br>
+        <input type="number" id="latitude" placeholder="Enter Latitude" />
+        <input type="number" id="longitude" placeholder="Enter Longitude" />
+        <button id="calculate">
+            Calculate Rise and Set Times and Progress
+        </button>
+        Sunrise Time: <span id="sunrise"></span><br />
+        Sunset Time: <span id="sunset"></span><br />
+        Moonrise Time: <span id="moonrise"></span><br />
+        Moonset Time: <span id="moonset"></span><br />
         <h2>Progress</h2>
-        Progress from <div id="sun-start-time"></div> to <div id="sun-end-time"></div><br>: <span id="sun-progress"></span><br>
-        Progress from <div id="moon-start-time"></div> to <div id="moon-end-time"></div><br>: <span id="moon-progress"></span><br>
+        Progress from
+        <div id="sun-start-time"></div>
+        to
+        <div id="sun-end-time"></div>
+        <br />: <span id="sun-progress"></span><br />
+        Progress from
+        <div id="moon-start-time"></div>
+        to
+        <div id="moon-end-time"></div>
+        <br />: <span id="moon-progress"></span><br />
         <script type="module" src="src/main.js"></script>
     </body>
 </html>

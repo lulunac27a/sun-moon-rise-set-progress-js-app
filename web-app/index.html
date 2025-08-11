@@ -6,11 +6,19 @@
     </head>
     <body>
         <h1>Sun and Moon Rise and Set Progress App</h1>
-        <input type="number" id="latitude" placeholder="Enter Latitude" /><br />
+        <input
+            type="number"
+            id="latitude"
+            placeholder="Enter Latitude"
+            min="-90"
+            max="90"
+        /><br />
         <input
             type="number"
             id="longitude"
             placeholder="Enter Longitude"
+            min="-180"
+            max="180"
         /><br />
         <button id="calculate" onclick="calculate()">
             Calculate Rise and Set Times and Progress</button

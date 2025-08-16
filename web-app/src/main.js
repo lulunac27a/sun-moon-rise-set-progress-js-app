@@ -73,16 +73,16 @@ function calculate() {
             dateNow.getMonth(),
             dateNow.getDate() + i,
         );
-        let times = suncalc.getMoonTimes(
+        let moonTimes = suncalc.getMoonTimes(
             dateEvent,
             latitudeInput.value,
             longitudeInput.value,
         ); //get moonrise/moonset times for specific date
-        if (times.rise) {
-            moonEvents.push({ type: "rise", date: times.rise }); //add moonrise event
+        if (moonTimes.rise) {
+            moonEvents.push({ type: "rise", date: moonTimes.rise }); //add moonrise event
         }
-        if (times.set) {
-            moonEvents.push({ type: "set", date: times.set }); //add moonset event
+        if (moonTimes.set) {
+            moonEvents.push({ type: "set", date: moonTimes.set }); //add moonset event
         }
     }
     moonEvents.sort((a, b) => a.date - b.date); //sort events by date

@@ -102,10 +102,13 @@ input.question("Enter latitude: ", (latitudeInput) => {
             nextSunriseSet = sunrise;
             isSunUp = false; //sun is down
         }
-        if (previousMoonEvent.type === "rise") {
+        if (previousMoonEvent.type === "rise" && nextMoonEvent.type === "set") {
             //if current time is between moonrise and moonset
             isMoonUp = true; //moon is up
-        } else if (previousMoonEvent.type === "set") {
+        } else if (
+            previousMoonEvent.type === "set" &&
+            nextMoonEvent.type === "rise"
+        ) {
             //if current time is between moonset and moonrise
             isMoonUp = false; //moon is down
         }

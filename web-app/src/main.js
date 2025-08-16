@@ -88,15 +88,18 @@ function calculate() {
     moonEvents.sort((a, b) => a.date - b.date); //sort events by date
     previousMoonEvent = [...moonEvents].reverse().find((e) => e.date < dateNow); //get previous moon rise/set event from current date and time
     nextMoonEvent = moonEvents.find((e) => e.date > dateNow); //get next moon rise/set event from current date and time
-    if (previousMoonEvent.type === "rise" && nextMoonEvent.type === "set") {
-        //if current time is between moonrise and moonset
-        isMoonUp = true; //moon is up
-    } else if (
-        previousMoonEvent.type === "set" &&
-        nextMoonEvent.type === "rise"
-    ) {
-        //if current time is between moonset and moonrise
-        isMoonUp = false; //moon is down
+    if (previousMoonEvent && nextMoonEvent) {
+        //check if previous and next moon events exist
+        if (previousMoonEvent.type === "rise" && nextMoonEvent.type === "set") {
+            //if current time is between moonrise and moonset
+            isMoonUp = true; //moon is up
+        } else if (
+            previousMoonEvent.type === "set" &&
+            nextMoonEvent.type === "rise"
+        ) {
+            //if current time is between moonset and moonrise
+            isMoonUp = false; //moon is down
+        }
     }
     const sunProgress =
         (dateNow - previousSunriseSet) / (nextSunriseSet - previousSunriseSet); //sun progress
